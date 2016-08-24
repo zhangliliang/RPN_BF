@@ -26,7 +26,7 @@ function conf = proposal_config_caltech(varargin)
     % Images per batch, only supports ims_per_batch = 1 currently
     ip.addParamValue('ims_per_batch',   1,              @isscalar);
     % Minibatch size
-    ip.addParamValue('batch_size',      128,            @isscalar);
+    ip.addParamValue('batch_size',      120,            @isscalar);
     % Fraction of minibatch that is foreground labeled (class > 0)
     ip.addParamValue('fg_fraction',     1/6,           @isscalar);
     % weight of background samples, when weight of foreground samples is

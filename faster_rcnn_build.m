@@ -24,4 +24,7 @@ if ~exist('nms_gpu_mex', 'file')
    delete('nms_gpu_mex.o');
 end
 
+% compile dollar's toolbox
+toolboxCompile();
+
 

@@ -19,6 +19,7 @@ imdb/cache
 *.caffemodel
 *.mat
 
+
 # Windows Installer files
 *.cab
 *.msi

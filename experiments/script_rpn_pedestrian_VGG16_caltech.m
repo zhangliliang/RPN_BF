@@ -24,7 +24,6 @@ opts.do_val                 = true;
 model                       = Model.VGG16_for_rpn_pedestrian_caltech(exp_name);
 % cache base
 cache_base_proposal         = 'rpn_caltech_vgg_16layers';
-cache_base_fast_rcnn        = '';
 % train/test data
 dataset                     = [];
 % use_flipped                 = true;
