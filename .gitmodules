@@ -1,4 +1,0 @@
-[submodule "external/caffe"]
-	path = external/caffe
-	url = https://github.com/zhangliliang/caffe.git
-	branch = RPN_BF
