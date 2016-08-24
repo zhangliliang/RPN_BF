@@ -11,14 +11,15 @@ $RECYCLE.BIN/
 # User Ingore
 models/
 data/
-datasets/
 external/caffe/matlab
+external/code3.2.1
 output/
 cachedir/
 imdb/cache
 *.caffemodel
 *.mat
 *.jpg
+bin/
 
 
 # Windows Installer files

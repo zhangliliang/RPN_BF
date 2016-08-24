@@ -7,6 +7,7 @@
 
 dataDir='./datasets/caltech/';
 addpath(genpath('./external/code3.2.1'));
+addpath(genpath('./external/toolbox'));
 
 for s=1:2
   if(s==1), type='test'; skip=[]; else type='train'; skip=3; end

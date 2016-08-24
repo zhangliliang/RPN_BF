@@ -12,10 +12,12 @@ function startup()
     addpath(genpath(fullfile(curdir, 'bin')));
     addpath(genpath(fullfile(curdir, 'experiments')));
     addpath(genpath(fullfile(curdir, 'imdb')));
+    
+    addpath(genpath(fullfile(curdir, 'datasets/caltech')));
+%     mkdir_if_missing(fullfile(curdir, 'datasets'));
 
-    mkdir_if_missing(fullfile(curdir, 'datasets'));
-
-    mkdir_if_missing(fullfile(curdir, 'external'));
+%     mkdir_if_missing(fullfile(curdir, 'external'));
+    addpath(genpath(fullfile(curdir, 'external/toolbox')));
 
     caffe_path = fullfile(curdir, 'external', 'caffe', 'matlab');
     if exist(caffe_path, 'dir') == 0
