@@ -4,7 +4,7 @@ By Liliang Zhang, Liang Lin, Xiaodan Liang, Kaiming He
 
 ### Introduction
 
-This code is relative to an [arXiv tech report](http://arxiv.org/abs/1506.01497), which is also accepted on ECCV 2016.
+This code is relative to an [arXiv tech report](https://arxiv.org/abs/1607.07032), which is also accepted on ECCV 2016.
 
 The RPN code in this repo is written based on the MATLAB re-implementation of Faster R-CNN. Details about Faster R-CNN are in: [ShaoqingRen/faster_rcnn](https://github.com/ShaoqingRen/faster_rcnn).
 
