@@ -18,6 +18,7 @@ cachedir/
 imdb/cache
 *.caffemodel
 *.mat
+*.jpg
 
 
 # Windows Installer files
