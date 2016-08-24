@@ -1,4 +1,4 @@
-function script_rpn_pedestrian_VGG16_caltech_BF()
+function script_rpn_bf_pedestrian_VGG16_caltech()
 
 clc;
 clear mex;

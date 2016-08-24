@@ -13,7 +13,7 @@ function startup()
     addpath(genpath(fullfile(curdir, 'experiments')));
     addpath(genpath(fullfile(curdir, 'imdb')));
     
-    addpath(genpath(fullfile(curdir, 'datasets/caltech')));
+    addpath(fullfile(curdir, 'datasets/caltech'));
 %     mkdir_if_missing(fullfile(curdir, 'datasets'));
 
 %     mkdir_if_missing(fullfile(curdir, 'external'));
