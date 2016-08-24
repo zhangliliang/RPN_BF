@@ -55,6 +55,7 @@ function aboxes = do_proposal_test_caltech(conf, model_stage, imdb, roidb, cache
     % copy results to eval folder and eval to get figure.
     folder1 = fullfile(pwd, 'output', conf.exp_name, 'rpn_cachedir', cache_name, method_name);
     folder2 = fullfile(pwd, 'external', 'code3.2.1', 'data-USA', 'res', method_name);
+    mkdir_if_missing(folder2);
     copyfile(folder1, folder2);
     tmp_dir = pwd;
     cd(fullfile(pwd, 'external', 'code3.2.1'));
