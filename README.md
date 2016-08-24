@@ -23,3 +23,9 @@ If you find this repo useful in your research, please consider citing:
       year={2016}
     }
 
+### Requirements
+
+0. `Caffe` build for Faster R-CNN (included in this repository, see `external/caffe`)
+    - If you are using Windows, you may download a compiled mex file by running `fetch_data/fetch_caffe_mex_windows_vs2013_cuda65.m`
+    - If you are using Linux or you want to compile for Windows, please follow the [instructions](https://github.com/ShaoqingRen/caffe/tree/faster-R-CNN) on our Caffe branch.
+
