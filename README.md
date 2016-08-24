@@ -26,6 +26,11 @@ If you find this repo useful in your research, please consider citing:
 ### Requirements
 
 0. `Caffe` build for Faster R-CNN (see [here](https://github.com/zhangliliang/caffe/tree/RPN_BF))
-    - If you are using Windows, you may download a compiled mex file by running `fetch_data/fetch_caffe_mex_windows_vs2013_cuda65.m`
-    - If you are using Linux or you want to compile for Windows, please follow the [instructions](https://github.com/ShaoqingRen/caffe/tree/faster-R-CNN) on our Caffe branch.
+    - If the mex in 'external/caffe/matlab/caffe_faster_rcnn' could not run under your system, please follow the [instructions](https://github.com/zhangliliang/caffe/tree/RPN_BF) on our Caffe branch to compile and replace the mex.
+
+0. MATLAB
+
+0. GPU: Titan X, K40c, etc.
+
+### Testing Demo:
 
