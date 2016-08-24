@@ -13,6 +13,8 @@ models/
 data/
 external/caffe/matlab
 external/code3.2.1
+datasets/caltech/test
+datasets/caltech/train
 output/
 cachedir/
 imdb/cache
