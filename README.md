@@ -25,12 +25,23 @@ If you find this repo useful in your research, please consider citing:
 
 ### Requirements
 
-0. `Caffe` build for Faster R-CNN (see [here](https://github.com/zhangliliang/caffe/tree/RPN_BF))
+0. `Caffe` build for RPN+BF (see [here](https://github.com/zhangliliang/caffe/tree/RPN_BF))
     - If the mex in 'external/caffe/matlab/caffe_faster_rcnn' could not run under your system, please follow the [instructions](https://github.com/zhangliliang/caffe/tree/RPN_BF) on our Caffe branch to compile and replace the mex.
 
 0. MATLAB
 
 0. GPU: Titan X, K40c, etc.
 
-### Testing Demo:
+### Testing Demo
+
+0. Download `VGG16\_caltech\_final.zip` from [BaiduYun](https://pan.baidu.com/s/1miNdKZe), and unzip it in the repo folder.
+
+0. Start MATLAB from the repo folder.
+
+0. Run `faster_rcnn_build.m`
+
+0. Run `experiments/script_rpn_bf_pedestrian_VGG16_caltech_demo.m` to see the detection results on some images collected in Internet.
+
+
+
 
