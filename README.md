@@ -4,7 +4,7 @@ By Liliang Zhang, Liang Lin, Xiaodan Liang, Kaiming He
 
 ### Introduction
 
-This code is relative to an [arXiv tech report](https://arxiv.org/abs/1607.07032), which is also accepted on ECCV 2016.
+This code is relative to an [arXiv tech report](https://arxiv.org/abs/1607.07032), which is accepted on ECCV 2016.
 
 The RPN code in this repo is written based on the MATLAB re-implementation of Faster R-CNN. Details about Faster R-CNN are in: [ShaoqingRen/faster_rcnn](https://github.com/ShaoqingRen/faster_rcnn).
 
@@ -48,12 +48,20 @@ If you find this repo useful in your research, please consider citing:
 
 0. Download the annotations and videos in [Caltech Pedestrian Dataset](http://www.vision.caltech.edu/Image_Datasets/CaltechPedestrians/datasets/USA/) and put them in the proper folder follow the instruction in the [website](http://www.vision.caltech.edu/Image_Datasets/CaltechPedestrians/).
 
+0. Download the VGG-16 pretrain model and the relative prototxt in `VGG16_caltech_pretrain.zip` [BaiduYun](https://pan.baidu.com/s/1miNdKZe), and unzip it in the repo folder.
+
 0. Start MATLAB from the repo folder, and run `extract_img_anno` for extracting images in JPEG format and annotations in TEXT format from the Caltech dataset.
 
 0. Run `script_rpn_pedestrian_VGG16_caltech` to train and test the RPN model on Caltech. Wait about half day for training and testing.
 
 0. Hopefully it would give the evaluation results around ~14% MR after running.   
 
+### Training on Caltech (RPN+BF)
 
+0. Follow the instruction in "Training on Caltech (RPN)" for obtaining the RPN model.
+
+0. Run `script_rpn_bf_pedestrian_VGG16_caltech` to train and test the BF model on Caltech. Wait about two or three day for training and testing.
+
+0. Hopefully it would give the evaluation results around ~10% MR after running.  
 
 
