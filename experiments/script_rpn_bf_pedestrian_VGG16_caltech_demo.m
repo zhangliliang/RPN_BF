@@ -22,6 +22,9 @@ opts.test_min_box_size      = 16;
 opts.test_min_box_height    = 50;
 opts.test_drop_boxes_runoff_image = true;
 
+opts.max_rois_num_in_gpu    = 2000;
+opts.ratio                  = 1;
+
 
 %% -------------------- INIT_MODEL --------------------
 model_dir                   = fullfile(pwd, 'output', 'VGG16_caltech_final'); 
@@ -95,7 +98,7 @@ for j = 1:2 % we warm up 2 times
     for i = 1:length(featmap_blobs_names);
         featmap_blobs{i} = rpn_net.blobs(featmap_blobs_names{i});
     end
-    feat = rois_get_features_from_featmap_ratio(rpn_bf_model.conf_bf, fast_rcnn_net, im, featmap_blobs, aboxes(:, 1:4), 2000, 1);
+    feat = rois_get_features_from_featmap_ratio(rpn_bf_model.conf_bf, fast_rcnn_net, im, featmap_blobs, aboxes(:, 1:4), opts.max_rois_num_in_gpu, opts.ratio);
 end
 
 %% -------------------- TESTING --------------------
@@ -125,7 +128,7 @@ for j = 1:length(im_names)
     for i = 1:length(featmap_blobs_names);
         featmap_blobs{i} = rpn_net.blobs(featmap_blobs_names{i});
     end
-    feat = rois_get_features_from_featmap_ratio(rpn_bf_model.conf_bf, fast_rcnn_net, im, featmap_blobs, aboxes(:, 1:4), 2000, 1);
+    feat = rois_get_features_from_featmap_ratio(rpn_bf_model.conf_bf, fast_rcnn_net, im, featmap_blobs, aboxes(:, 1:4), opts.max_rois_num_in_gpu, opts.ratio);
     scores = adaBoostApply(feat, detector.clf);
     bbs = [aboxes(:, 1:4) scores];
     sel_idx = nms(bbs, rpn_bf_model.conf_bf.nms_thres);
