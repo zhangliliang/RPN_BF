@@ -12,7 +12,7 @@ This BF code in this repo is written based on Piotr's Image & Video Matlab Toolb
 
 This code has been tested on Ubuntu 14.04 with MATLAB 2014b.
 
-### Citing Faster R-CNN
+### Citing RPN+BF
 
 If you find this repo useful in your research, please consider citing:
 
@@ -34,13 +34,25 @@ If you find this repo useful in your research, please consider citing:
 
 ### Testing Demo
 
-0. Download `VGG16\_caltech\_final.zip` from [BaiduYun](https://pan.baidu.com/s/1miNdKZe), and unzip it in the repo folder.
+0. Download `VGG16_caltech_final.zip` from [BaiduYun](https://pan.baidu.com/s/1miNdKZe), and unzip it in the repo folder.
 
 0. Start MATLAB from the repo folder.
 
-0. Run `faster_rcnn_build.m`
+0. Run `faster_rcnn_build`
 
-0. Run `experiments/script_rpn_bf_pedestrian_VGG16_caltech_demo.m` to see the detection results on some images collected in Internet.
+0. Run `script_rpn_bf_pedestrian_VGG16_caltech_demo` to see the detection results on some images collected in Internet.
+
+## Training on Caltech (RPN)
+
+0. Download "Matlab evaluation/labeling code (3.2.1)" as `external/code3.2.1` by run `fetch_data/fetch_caltech_toolbox.m`
+
+0. Download the annotations and videos in [Caltech Pedestrian Dataset](http://www.vision.caltech.edu/Image_Datasets/CaltechPedestrians/datasets/USA/) and put them in the proper folder follow the instruction in the [website](http://www.vision.caltech.edu/Image_Datasets/CaltechPedestrians/).
+
+0. Start MATLAB from the repo folder, and run `extract_img_anno` for extracting images in JPEG format and annotations in TEXT format from the Caltech dataset.
+
+0. Run `script_rpn_pedestrian_VGG16_caltech` to train and test the RPN model on Caltech. Wait about half day for training and testing.
+
+0. Hopefully it would give the evaluation results around ~14% MR after running.   
 
 
 
