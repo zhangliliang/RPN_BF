@@ -1,0 +1,214 @@
+conf:
+                      batch_size: 120
+                    bg_thresh_hi: 0.5000
+                    bg_thresh_lo: 0
+                       bg_weight: 1
+      drop_fg_boxes_runoff_image: 1
+                     feat_stride: 16
+                     fg_fraction: 0.1667
+                       fg_thresh: 0.5000
+                     image_means: [1x1x3 single]
+                   ims_per_batch: 1
+                        max_size: 960
+                        rng_seed: 6
+                          scales: 720
+                  target_only_gt: 1
+                     test_binary: 0
+    test_drop_boxes_runoff_image: 0
+                   test_max_size: 960
+             test_min_box_height: 50
+               test_min_box_size: 16
+                        test_nms: 0.5000
+                     test_scales: 720
+                     use_flipped: 0
+                         use_gpu: 1
+                        exp_name: 'VGG16_caltech'
+                         anchors: [9x4 double]
+                output_width_map: [2x1 containers.Map]
+               output_height_map: [2x1 containers.Map]
+opts:
+                 cache_name: 'rpn_caltech_vgg_16layers_stage1_rpn'
+                       conf: [1x1 struct]
+                     do_val: 1
+    empty_image_sample_step: 1
+                   exp_name: 'VGG16_caltech'
+                 imdb_train: {[1x1 struct]}
+                   imdb_val: [1x1 struct]
+                   net_file: '/home/dji/liliang/eccv/release/RPN_BF.cleanup/models/VGG16_caltech/pre_t...'
+                roidb_train: {[1x1 struct]}
+                  roidb_val: [1x1 struct]
+          snapshot_interval: 10000
+            solver_def_file: '/home/dji/liliang/eccv/release/RPN_BF.cleanup/models/VGG16_caltech/rpn_p...'
+               val_interval: 2000
+                  val_iters: 50
+             fg_image_ratio: 0.5000
+Preparing training data...total (42782) = nonempty (9105) + empty (33677)
+Starting parallel pool (parpool) using the 'local' profile ... connected to 16 workers.
+Done.
+Preparing validation data...total (4024) = nonempty (681) + empty (3343)
+Done.
+
+------------------------- Iteration 2000 -------------------------
+Training : err_fg 0.594, err_bg 0.0114, loss (cls 0.0698 + reg 0.00577)
+Testing  : err_fg 0.513, err_bg 0.0104, loss (cls 0.0296 + reg 0.00443)
+
+------------------------- Iteration 4000 -------------------------
+Training : err_fg 0.527, err_bg 0.00774, loss (cls 0.0364 + reg 0.00411)
+Testing  : err_fg 0.541, err_bg 0.0024, loss (cls 0.0239 + reg 0.00362)
+
+------------------------- Iteration 6000 -------------------------
+Training : err_fg 0.548, err_bg 0.00609, loss (cls 0.0285 + reg 0.00336)
+Testing  : err_fg 0.519, err_bg 0.0044, loss (cls 0.0168 + reg 0.0036)
+
+------------------------- Iteration 8000 -------------------------
+Training : err_fg 0.513, err_bg 0.00589, loss (cls 0.0261 + reg 0.00314)
+Testing  : err_fg 0.559, err_bg 0.0024, loss (cls 0.0231 + reg 0.00309)
+
+------------------------- Iteration 10000 -------------------------
+Training : err_fg 0.522, err_bg 0.00483, loss (cls 0.0199 + reg 0.00286)
+Testing  : err_fg 0.558, err_bg 0.0022, loss (cls 0.0293 + reg 0.0039)
+Saved as /home/dji/liliang/eccv/release/RPN_BF.cleanup/output/VGG16_caltech/rpn_cachedir/rpn_caltech_vgg_16layers_stage1_rpn/train/iter_10000
+
+------------------------- Iteration 12000 -------------------------
+Training : err_fg 0.492, err_bg 0.00501, loss (cls 0.0211 + reg 0.00285)
+Testing  : err_fg 0.511, err_bg 0.0024, loss (cls 0.0129 + reg 0.00288)
+
+------------------------- Iteration 14000 -------------------------
+Training : err_fg 0.504, err_bg 0.00492, loss (cls 0.0191 + reg 0.00267)
+Testing  : err_fg 0.562, err_bg 0.0018, loss (cls 0.0293 + reg 0.00299)
+
+------------------------- Iteration 16000 -------------------------
+Training : err_fg 0.506, err_bg 0.00426, loss (cls 0.0178 + reg 0.00258)
+Testing  : err_fg 0.509, err_bg 0.0066, loss (cls 0.0157 + reg 0.00305)
+
+------------------------- Iteration 18000 -------------------------
+Training : err_fg 0.521, err_bg 0.00488, loss (cls 0.0217 + reg 0.0024)
+Testing  : err_fg 0.538, err_bg 0.0034, loss (cls 0.0238 + reg 0.00354)
+
+------------------------- Iteration 20000 -------------------------
+Training : err_fg 0.517, err_bg 0.00413, loss (cls 0.0172 + reg 0.00234)
+Testing  : err_fg 0.544, err_bg 0.0022, loss (cls 0.0177 + reg 0.00308)
+Saved as /home/dji/liliang/eccv/release/RPN_BF.cleanup/output/VGG16_caltech/rpn_cachedir/rpn_caltech_vgg_16layers_stage1_rpn/train/iter_20000
+
+------------------------- Iteration 22000 -------------------------
+Training : err_fg 0.527, err_bg 0.00398, loss (cls 0.0158 + reg 0.00229)
+Testing  : err_fg 0.533, err_bg 0.0018, loss (cls 0.0177 + reg 0.00278)
+
+------------------------- Iteration 24000 -------------------------
+Training : err_fg 0.509, err_bg 0.00352, loss (cls 0.0144 + reg 0.00222)
+Testing  : err_fg 0.544, err_bg 0.0014, loss (cls 0.0222 + reg 0.00293)
+
+------------------------- Iteration 26000 -------------------------
+Training : err_fg 0.509, err_bg 0.00356, loss (cls 0.014 + reg 0.00214)
+Testing  : err_fg 0.555, err_bg 0.0024, loss (cls 0.0343 + reg 0.00272)
+
+------------------------- Iteration 28000 -------------------------
+Training : err_fg 0.519, err_bg 0.00355, loss (cls 0.0147 + reg 0.00206)
+Testing  : err_fg 0.524, err_bg 0.0026, loss (cls 0.0146 + reg 0.00273)
+
+------------------------- Iteration 30000 -------------------------
+Training : err_fg 0.517, err_bg 0.00328, loss (cls 0.0131 + reg 0.00208)
+Testing  : err_fg 0.548, err_bg 0.0018, loss (cls 0.0266 + reg 0.00244)
+Saved as /home/dji/liliang/eccv/release/RPN_BF.cleanup/output/VGG16_caltech/rpn_cachedir/rpn_caltech_vgg_16layers_stage1_rpn/train/iter_30000
+
+------------------------- Iteration 32000 -------------------------
+Training : err_fg 0.502, err_bg 0.00343, loss (cls 0.0134 + reg 0.002)
+Testing  : err_fg 0.539, err_bg 0.0018, loss (cls 0.0176 + reg 0.00243)
+
+------------------------- Iteration 34000 -------------------------
+Training : err_fg 0.516, err_bg 0.00341, loss (cls 0.0121 + reg 0.00195)
+Testing  : err_fg 0.544, err_bg 0.0012, loss (cls 0.0207 + reg 0.00254)
+
+------------------------- Iteration 36000 -------------------------
+Training : err_fg 0.495, err_bg 0.00334, loss (cls 0.0122 + reg 0.00194)
+Testing  : err_fg 0.521, err_bg 0.0026, loss (cls 0.0129 + reg 0.0025)
+
+------------------------- Iteration 38000 -------------------------
+Training : err_fg 0.499, err_bg 0.00295, loss (cls 0.0112 + reg 0.00192)
+Testing  : err_fg 0.544, err_bg 0.002, loss (cls 0.018 + reg 0.00245)
+
+------------------------- Iteration 40000 -------------------------
+Training : err_fg 0.517, err_bg 0.00264, loss (cls 0.00964 + reg 0.00176)
+Testing  : err_fg 0.546, err_bg 0.0016, loss (cls 0.0252 + reg 0.00242)
+Saved as /home/dji/liliang/eccv/release/RPN_BF.cleanup/output/VGG16_caltech/rpn_cachedir/rpn_caltech_vgg_16layers_stage1_rpn/train/iter_40000
+
+------------------------- Iteration 42000 -------------------------
+Training : err_fg 0.5, err_bg 0.0031, loss (cls 0.0114 + reg 0.00179)
+Testing  : err_fg 0.553, err_bg 0.0016, loss (cls 0.0265 + reg 0.00241)
+
+------------------------- Iteration 44000 -------------------------
+Training : err_fg 0.504, err_bg 0.00287, loss (cls 0.00984 + reg 0.00172)
+Testing  : err_fg 0.536, err_bg 0.0012, loss (cls 0.0152 + reg 0.00223)
+
+------------------------- Iteration 46000 -------------------------
+Training : err_fg 0.528, err_bg 0.00272, loss (cls 0.0102 + reg 0.00165)
+Testing  : err_fg 0.512, err_bg 0.0024, loss (cls 0.0122 + reg 0.00235)
+
+------------------------- Iteration 48000 -------------------------
+Training : err_fg 0.524, err_bg 0.00245, loss (cls 0.00921 + reg 0.00158)
+Testing  : err_fg 0.553, err_bg 0.001, loss (cls 0.0249 + reg 0.00259)
+
+------------------------- Iteration 50000 -------------------------
+Training : err_fg 0.502, err_bg 0.00237, loss (cls 0.00833 + reg 0.00159)
+Testing  : err_fg 0.549, err_bg 0.002, loss (cls 0.0271 + reg 0.00236)
+Saved as /home/dji/liliang/eccv/release/RPN_BF.cleanup/output/VGG16_caltech/rpn_cachedir/rpn_caltech_vgg_16layers_stage1_rpn/train/iter_50000
+
+------------------------- Iteration 52000 -------------------------
+Training : err_fg 0.516, err_bg 0.00235, loss (cls 0.00904 + reg 0.00158)
+Testing  : err_fg 0.544, err_bg 0.0026, loss (cls 0.0216 + reg 0.00248)
+
+------------------------- Iteration 54000 -------------------------
+Training : err_fg 0.517, err_bg 0.00259, loss (cls 0.00974 + reg 0.00161)
+Testing  : err_fg 0.541, err_bg 0.0016, loss (cls 0.0237 + reg 0.00261)
+
+------------------------- Iteration 56000 -------------------------
+Training : err_fg 0.518, err_bg 0.0024, loss (cls 0.00859 + reg 0.00146)
+Testing  : err_fg 0.548, err_bg 0.0012, loss (cls 0.0325 + reg 0.00239)
+
+------------------------- Iteration 58000 -------------------------
+Training : err_fg 0.497, err_bg 0.00225, loss (cls 0.00856 + reg 0.00153)
+Testing  : err_fg 0.537, err_bg 0.0016, loss (cls 0.0168 + reg 0.00256)
+
+------------------------- Iteration 60000 -------------------------
+Training : err_fg 0.505, err_bg 0.00234, loss (cls 0.00843 + reg 0.00151)
+Testing  : err_fg 0.558, err_bg 0.0006, loss (cls 0.0287 + reg 0.00234)
+Saved as /home/dji/liliang/eccv/release/RPN_BF.cleanup/output/VGG16_caltech/rpn_cachedir/rpn_caltech_vgg_16layers_stage1_rpn/train/iter_60000
+
+------------------------- Iteration 62000 -------------------------
+Training : err_fg 0.487, err_bg 0.00208, loss (cls 0.00765 + reg 0.00139)
+Testing  : err_fg 0.555, err_bg 0.0012, loss (cls 0.0245 + reg 0.00231)
+
+------------------------- Iteration 64000 -------------------------
+Training : err_fg 0.493, err_bg 0.00216, loss (cls 0.00783 + reg 0.00132)
+Testing  : err_fg 0.56, err_bg 0.001, loss (cls 0.0279 + reg 0.0023)
+
+------------------------- Iteration 66000 -------------------------
+Training : err_fg 0.483, err_bg 0.00199, loss (cls 0.00676 + reg 0.00125)
+Testing  : err_fg 0.551, err_bg 0.0008, loss (cls 0.0231 + reg 0.00233)
+
+------------------------- Iteration 68000 -------------------------
+Training : err_fg 0.512, err_bg 0.00199, loss (cls 0.00683 + reg 0.00126)
+Testing  : err_fg 0.556, err_bg 0.0008, loss (cls 0.0241 + reg 0.00231)
+
+------------------------- Iteration 70000 -------------------------
+Training : err_fg 0.487, err_bg 0.00188, loss (cls 0.00663 + reg 0.0013)
+Testing  : err_fg 0.558, err_bg 0.0016, loss (cls 0.0268 + reg 0.00236)
+Saved as /home/dji/liliang/eccv/release/RPN_BF.cleanup/output/VGG16_caltech/rpn_cachedir/rpn_caltech_vgg_16layers_stage1_rpn/train/iter_70000
+
+------------------------- Iteration 72000 -------------------------
+Training : err_fg 0.496, err_bg 0.00193, loss (cls 0.00693 + reg 0.00121)
+Testing  : err_fg 0.564, err_bg 0.0008, loss (cls 0.0318 + reg 0.00237)
+
+------------------------- Iteration 74000 -------------------------
+Training : err_fg 0.487, err_bg 0.00177, loss (cls 0.00613 + reg 0.00124)
+Testing  : err_fg 0.548, err_bg 0.0012, loss (cls 0.0248 + reg 0.00238)
+
+------------------------- Iteration 76000 -------------------------
+Training : err_fg 0.513, err_bg 0.00205, loss (cls 0.00667 + reg 0.00118)
+Testing  : err_fg 0.555, err_bg 0.0016, loss (cls 0.0273 + reg 0.00232)
+
+------------------------- Iteration 78000 -------------------------
+Training : err_fg 0.497, err_bg 0.00183, loss (cls 0.00623 + reg 0.0012)
+Testing  : err_fg 0.565, err_bg 0.0008, loss (cls 0.032 + reg 0.00233)
+Saved as /home/dji/liliang/eccv/release/RPN_BF.cleanup/output/VGG16_caltech/rpn_cachedir/rpn_caltech_vgg_16layers_stage1_rpn/train/iter_80000
+Saved as /home/dji/liliang/eccv/release/RPN_BF.cleanup/output/VGG16_caltech/rpn_cachedir/rpn_caltech_vgg_16layers_stage1_rpn/train/final
