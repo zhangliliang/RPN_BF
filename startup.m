@@ -14,9 +14,7 @@ function startup()
     addpath(genpath(fullfile(curdir, 'imdb')));
     
     addpath(fullfile(curdir, 'datasets/caltech'));
-%     mkdir_if_missing(fullfile(curdir, 'datasets'));
 
-%     mkdir_if_missing(fullfile(curdir, 'external'));
     addpath(genpath(fullfile(curdir, 'external/toolbox')));
 
     caffe_path = fullfile(curdir, 'external', 'caffe', 'matlab');
@@ -31,5 +29,5 @@ function startup()
 
     mkdir_if_missing(fullfile(curdir, 'models'));
 
-    fprintf('fast_rcnn startup done\n');
+    fprintf('RPN_BF startup done\n');
 end

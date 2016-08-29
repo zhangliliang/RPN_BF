@@ -46,12 +46,10 @@ function save_model_path = proposal_train_caltech(conf, imdb_train, roidb_train,
         return;
     end
 
-
-    % for debug
-%     opts.snapshot_interval = 2000;
-%     opts.val_iters = 50;
-%     opts.empty_image_sample_step = 1;
-
+   % in current implentation, we set the ratio of foreground images
+   % (which contain at least one pedestrian)
+   % as 50% for fully using background images (which contain no pedestrian
+   % at all) while balancing their propotion).
    opts.fg_image_ratio = 0.5;
     
 %% init  
@@ -111,7 +109,6 @@ function save_model_path = proposal_train_caltech(conf, imdb_train, roidb_train,
 %% -------------------- Training -------------------- 
 
     proposal_generate_minibatch_fun = @proposal_generate_minibatch_caltech;
-    visual_debug_fun                = @proposal_visual_debug;
 
     % training
     shuffled_inds = [];
@@ -127,10 +124,6 @@ function save_model_path = proposal_train_caltech(conf, imdb_train, roidb_train,
         [shuffled_inds, sub_db_inds] = generate_random_minibatch(shuffled_inds, image_roidb_train, conf.ims_per_batch, opts.fg_image_ratio);        
         [net_inputs, scale_inds] = proposal_generate_minibatch_fun(conf, image_roidb_train(sub_db_inds));
         
-        % debug
-        %fprintf('%d / %d\n', sum(net_inputs{2}(:)) *max(net_inputs{3}(:)), conf.batch_size);
-        
-        % visual_debug_fun(conf, image_roidb_train(sub_db_inds), net_inputs, bbox_means, bbox_stds, conf.classes, scale_inds);
         caffe_solver.net.reshape_as_input(net_inputs);
 
         % one iter SGD update
@@ -227,8 +220,6 @@ function [shuffled_inds, sub_inds] = generate_random_minibatch(shuffled_inds, im
             
             % make sure each minibatch, contain half (or half+1) gt-nonempty
             % image, and half gt-empty image
-            
-            %         empty_image_inds = arrayfun(@(x) isempty(find(x.gt_ignores == 0)), image_roidb, 'UniformOutput', true);
             empty_image_inds = arrayfun(@(x) sum(x.bbox_targets{1}(:, 1)==1) == 0, image_roidb, 'UniformOutput', true);
             nonempty_image_inds = ~empty_image_inds;
             empty_image_inds = find(empty_image_inds);

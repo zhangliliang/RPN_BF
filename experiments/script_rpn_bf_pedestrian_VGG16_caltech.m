@@ -52,10 +52,10 @@ end
 model.stage1_rpn.nms.per_nms_topN = -1;
 model.stage1_rpn.nms.nms_overlap_thres = 1;
 model.stage1_rpn.nms.after_nms_topN = 40;
-roidb_test_BF = Faster_RCNN_Train.do_proposal_test_caltech_boost(conf_proposal, model.stage1_rpn, dataset.imdb_test, dataset.roidb_test);
+roidb_test_BF = Faster_RCNN_Train.do_generate_bf_proposal_caltech(conf_proposal, model.stage1_rpn, dataset.imdb_test, dataset.roidb_test);
 model.stage1_rpn.nms.nms_overlap_thres = 0.7;
 model.stage1_rpn.nms.after_nms_topN = 1000;
-roidb_train_BF = Faster_RCNN_Train.do_proposal_test_caltech_boost(conf_proposal, model.stage1_rpn, dataset.imdb_train{1}, dataset.roidb_train{1});
+roidb_train_BF = Faster_RCNN_Train.do_generate_bf_proposal_caltech(conf_proposal, model.stage1_rpn, dataset.imdb_train{1}, dataset.roidb_train{1});
 
 %% train the BF
 BF_cachedir = fullfile(pwd, 'output', exp_name, 'bf_cachedir');
@@ -170,7 +170,7 @@ if 0 % set to 1 for visual
   end
 end
 
-% test detector and plot roc (see acfTest)
+% test detector and plot roc
 method_name = 'RPN+BF';
 folder1 = fullfile(pwd, 'output', exp_name, 'bf_cachedir', method_name);
 folder2 = fullfile(pwd, 'external', 'code3.2.1', 'data-USA', 'res', method_name);

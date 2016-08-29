@@ -116,7 +116,7 @@ for j = 1:length(im_names)
     
     % test rpn
     th = tic();
-    [boxes, scores]             = proposal_im_detect(rpn_bf_model.conf_rpn, rpn_net, im);
+    [boxes, scores]             = proposal_im_detect_caltech(rpn_bf_model.conf_rpn, rpn_net, im);
     t_proposal = toc(th);
     th = tic();
     aboxes                      = boxes_filter([boxes, scores], opts.per_nms_topN, opts.nms_overlap_thres, opts.after_nms_topN, opts.use_gpu);

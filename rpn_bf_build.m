@@ -1,8 +1,8 @@
-function faster_rcnn_build()
+function rpn_bf_build()
 % faster_rcnn_build()
 % --------------------------------------------------------
-% Faster R-CNN
-% Copyright (c) 2015, Shaoqing Ren
+% RPN_BF
+% Copyright (c) 2016, Liliang Zhang
 % Licensed under The MIT License [see LICENSE for details]
 % --------------------------------------------------------
 

@@ -11,7 +11,6 @@ function aboxes = do_proposal_test_caltech(conf, model_stage, imdb, roidb, cache
     gt_num = 0;
     gt_re_num = 0;
     for i = 1:length(roidb.rois)
-%         gts = roidb.rois(i).boxes;
         gts = roidb.rois(i).boxes(roidb.rois(i).ignores~=1, :);
         if ~isempty(gts)
             rois = aboxes{i}(:, 1:4);
@@ -41,7 +40,8 @@ function aboxes = do_proposal_test_caltech(conf, model_stage, imdb, roidb, cache
             sstr = strsplit(imdb.image_ids{i}, '_');
             mkdir_if_missing(fullfile(cache_dir, method_name, sstr{1}));
             fid = fopen(fullfile(cache_dir, method_name, sstr{1}, [sstr{2} '.txt']), 'a');
-            % transform [x1 y1 x2 y2] to [x1 y1 x2-x1 y2-y1]
+            % transform [x1 y1 x2 y2] to [x y w h], for matching the
+            % caltech evaluation protocol
             res_boxes{i}(:, 3) = res_boxes{i}(:, 3) - res_boxes{i}(:, 1);
             res_boxes{i}(:, 4) = res_boxes{i}(:, 4) - res_boxes{i}(:, 2);
             for j = 1:size(res_boxes{i}, 1)
@@ -52,7 +52,7 @@ function aboxes = do_proposal_test_caltech(conf, model_stage, imdb, roidb, cache
     end
     fprintf('Done.');
     
-    % copy results to eval folder and eval to get figure.
+    % copy results to eval folder and run eval script to get figure.
     folder1 = fullfile(pwd, 'output', conf.exp_name, 'rpn_cachedir', cache_name, method_name);
     folder2 = fullfile(pwd, 'external', 'code3.2.1', 'data-USA', 'res', method_name);
     mkdir_if_missing(folder2);
@@ -94,8 +94,4 @@ function aboxes = boxes_filter(aboxes, per_nms_topN, nms_overlap_thres, after_nm
         aboxes = cellfun(@(x) x(1:min(size(x, 1), after_nms_topN), :), aboxes, 'UniformOutput', false);
     end
 end
-% 
-% function regions = make_roidb_regions(aboxes, images)
-%     regions.boxes = aboxes;
-%     regions.images = images;
-% end
+

@@ -16,7 +16,6 @@ opts.gpu_id                 = auto_select_gpu;
 active_caffe_mex(opts.gpu_id, opts.caffe_version);
 
 exp_name = 'VGG16_caltech';
-feat_stride = 16;
 
 % do validation, or not 
 opts.do_val                 = true; 
@@ -43,8 +42,6 @@ conf_proposal.exp_name = exp_name;
 [conf_proposal.anchors, conf_proposal.output_width_map, conf_proposal.output_height_map] ...
                             = proposal_prepare_anchors(conf_proposal, model.stage1_rpn.cache_name, model.stage1_rpn.test_net_def_file);
 
-
-conf_proposal.feat_stride = feat_stride;
                         
 %%  train
 fprintf('\n***************\nstage one RPN \n***************\n');
