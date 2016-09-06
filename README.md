@@ -10,7 +10,7 @@ The RPN code in this repo is written based on the MATLAB implementation of Faste
 
 This BF code in this repo is written based on Piotr's Image & Video Matlab Toolbox. Details about Piotr's Toolbox are in: [pdollar/toolbox](https://github.com/pdollar/toolbox).
 
-This code has been tested on Ubuntu 14.04 with MATLAB 2014b.
+This code has been tested on Ubuntu 14.04 with MATLAB 2014b and CUDA 7.5.
 
 ### Citing RPN+BF
 
@@ -32,9 +32,12 @@ If you find this repo useful in your research, please consider citing:
 
 0. GPU: Titan X, K40c, etc.
 
+
+**WARNING**: The `caffe_.mexa64` in `external/caffe/matlab/caffe_faster_rcnn` might be not compatible with your computer. If so, please try to compile [this Caffe version](https://github.com/zhangliliang/caffe/tree/RPN_BF) and replace it. 
+
 ### Testing Demo
 
-0. Download `VGG16_caltech_final.zip` from [OneDrive](https://1drv.ms/u/s!AgVYvWT--3HKhBgkVQkeMkLU_A5s) or [BaiduYun](https://pan.baidu.com/s/1miNdKZe), and unzip it in the repo folder.
+0. Download `VGG16_caltech_final.zip` from [BaiduYun](https://pan.baidu.com/s/1miNdKZe), and unzip it in the repo folder.
 
 0. Start MATLAB from the repo folder.
 
@@ -48,7 +51,7 @@ If you find this repo useful in your research, please consider citing:
 
 0. Download the annotations and videos in [Caltech Pedestrian Dataset](http://www.vision.caltech.edu/Image_Datasets/CaltechPedestrians/datasets/USA/) and put them in the proper folder follow the instruction in the [website](http://www.vision.caltech.edu/Image_Datasets/CaltechPedestrians/).
 
-0. Download the VGG-16 pretrain model and the relative prototxt in `VGG16_caltech_pretrain.zip` from [OneDrive](https://1drv.ms/u/s!AgVYvWT--3HKhBk67RUo47JEG_F_) or [BaiduYun](https://pan.baidu.com/s/1miNdKZe), and unzip it in the repo folder.
+0. Download the VGG-16 pretrain model and the relative prototxt in `VGG16_caltech_pretrain.zip` from [BaiduYun](https://pan.baidu.com/s/1miNdKZe), and unzip it in the repo folder.
 
 0. Start MATLAB from the repo folder, and run `extract_img_anno` for extracting images in JPEG format and annotations in TEXT format from the Caltech dataset.
 
