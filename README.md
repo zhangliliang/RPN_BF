@@ -33,7 +33,7 @@ If you find this repo useful in your research, please consider citing:
 0. GPU: Titan X, K40c, etc.
 
 
-**WARNING**: The `caffe_.mexa64` in `external/caffe/matlab/caffe_faster_rcnn` might be not compatible with your computer. If so, please try to compile [this Caffe version](https://github.com/zhangliliang/caffe/tree/RPN_BF) and replace it. 
+**WARNING**: The `caffe_.mexa64` in `external/caffe/matlab/caffe_faster_rcnn` might be not compatible with your computer. If so, please try to compile [this Caffe version](https://github.com/zhangliliang/caffe/tree/RPN_BF) and replace it.
 
 ### Testing Demo
 
@@ -41,7 +41,7 @@ If you find this repo useful in your research, please consider citing:
 
 0. Start MATLAB from the repo folder.
 
-0. Run `faster_rcnn_build`
+0. Run `rpn_bf_build`
 
 0. Run `script_rpn_bf_pedestrian_VGG16_caltech_demo` to see the detection results on some images collected in Internet.
 
@@ -66,5 +66,3 @@ If you find this repo useful in your research, please consider citing:
 0. Run `script_rpn_bf_pedestrian_VGG16_caltech` to train and test the BF model on Caltech. Wait about two or three days for training and testing.
 
 0. Hopefully it would give the evaluation results around ~10% MR after running.  
-
-
